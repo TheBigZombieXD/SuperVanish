@@ -11,6 +11,6 @@ commands:
     aliases: [v]
 permissions:
   supervanish.spectate:
-    description: "Vanish use perm"
+    description: "Vanish perm"
     default: op
 ...
