@@ -1,7 +1,7 @@
 name: SuperVanish
 main: RamaCoder\Vanish\Vanish
 version: 1.0.0
-description: Vanish yourself
+description: This plugin make you to vanish or invisibility with typing in chat /vanish or /v
 author: RamaCoder
 api: 3.0.0 ALPHA10
 commands:
