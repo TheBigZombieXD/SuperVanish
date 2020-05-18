@@ -1,0 +1,13 @@
+name: SuperVanish
+main: RamaCrasher\Vanish
+version: 1.0
+author: RamaCrasher
+api: 3.0.0 ALPHA10
+commands:
+  vanish:
+    description: "Vanish your self"
+    aliases: [v]
+permissions:
+  supervanish.spectate:
+    description: "Vanish use perm"
+    default: op
