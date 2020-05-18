@@ -1,7 +1,7 @@
 name: SuperVanish
-main: RamaCrasher\Vanish
+main: RamaCrasher\Vanish\Vanish
 version: 1.0
-author: RamaCrasher
+author: RamaCoder
 api: 3.0.0 ALPHA10
 commands:
   vanish:

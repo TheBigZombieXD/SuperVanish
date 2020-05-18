@@ -1,23 +1,64 @@
 <?php
+/**
+ *  ____                      __     __          _     _
+ * / ___| _   _ _ __   ___ _ _\ \   / /_ _ _ __ (_)___| |__
+ * \___ \| | | | '_ \ / _ \ '__\ \ / / _` | '_ \| / __| '_ \
+ *  ___) | |_| | |_) |  __/ |   \ V / (_| | | | | \__ \ | | |
+ * |____/ \__,_| .__/ \___|_|    \_/ \__,_|_| |_|_|___/_| |_|
+ *             |_|
+ * @author RamaCoder
+ * @discord Rama29#5506
+ * @YouTube RamaCoder
+ * @website https://github.com/TheBigZombieXD/SuperVanish
+ * 
+ * Copyright (c) RamaCoder 2019-2021
+ * 
+ * -----------------------------------------
+ * This software is distributed under "GNU General Public License v3.0".
+ *
+ * SuperVanish is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License v3.0 for more details.
+ *
+ * You should have received a copy of the GNU General Public License v3.0
+ * along with this program. If not, see
+ * <https://opensource.org/licenses/GPL-3.0>.
+ * -----------------------------------------
+ */
+declare(strict_types = 1);
 
-namespace RamaCrasher;
+namespace RamaCoder\Vanish;
 
 use pocketmine\plugin\PluginBase;
+
 use pocketmine\event\Listener;
+
 use pocketmine\utils\TextFormat as C;
 use pocketmine\utils\Config;
+
 use pocketmine\Player;
 use pocketmine\Server;
+
 use pocketmine\entity\Entity;
+
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 
+/**
+ * 
+ * @package RamaCoder\Vanish
+ * 
+ */
 class Vanish extends PluginBase implements Listener {
 
+    /** @var $prefix */
     public $prefix = C::BLUE."[§aSuper§2Vanish§b]§r".C::DARK_GRAY." >".C::WHITE." ";
 
+    /** @var $config */
     public $config;
 
+    /** @var $vanish */
     public $vanish = array();
 
     public function onEnable(){
@@ -31,6 +72,15 @@ class Vanish extends PluginBase implements Listener {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
+    /**
+     * 
+     * @param CommandSender $sender
+     * @param Command $command
+     * @param string $label
+     * @param array $args
+     * return bool
+     */
+    
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool {
         $name = $sender->getName();
         if($command->getName() == "vanish") {
@@ -46,7 +96,7 @@ class Vanish extends PluginBase implements Listener {
                     if($this->config->get("Adventure_Vanish") == true){
                         $sender->setGamemode(2);
                     }
-                    $sender->sendMessage($this->prefix . C::GREEN . "§bYou are now vanished. §3No one can see you.");
+                    $sender->sendMessage($this->prefix . C::GREEN . "You are now vanished. No one can see you.");
                     return true;
                 } elseif (in_array($name, $this->vanish)) {
                     unset($this->vanish[array_search($name, $this->vanish)]);
@@ -57,7 +107,7 @@ class Vanish extends PluginBase implements Listener {
                     }
                     $sender->setHealth(20);
                     $sender->setFood(20);
-                    $sender->sendMessage($this->prefix . C::RED . "§aYou are no longer vanished! §2Everyone should be able to see you.");
+                    $sender->sendMessage($this->prefix . C::RED . "You are no longer vanished!. Everyone should be able to see you.");
                     return true;
                 }
             }
