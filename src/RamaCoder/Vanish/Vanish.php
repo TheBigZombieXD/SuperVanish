@@ -52,13 +52,10 @@ use pocketmine\command\CommandSender;
  */
 class Vanish extends PluginBase implements Listener {
 
-    /** @var $prefix */
     public $prefix = C::BLUE."[§aSuper§2Vanish§b]§r".C::DARK_GRAY." >".C::WHITE." ";
 
-    /** @var $config */
     public $config;
 
-    /** @var $vanish */
     public $vanish = array();
 
     public function onEnable(){
