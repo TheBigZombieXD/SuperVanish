@@ -79,13 +79,13 @@ class Vanish extends PluginBase implements Listener {
      */
     
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool {
-        $name = $sender->getName();
         if($command->getName() == "vanish") {
             if(!$sender instanceof Player){
 				$sender->sendMessage($this->prefix . "§r§cThis game only usage in-game!");
 				return true;
 			}
             if($sender->hasPermission("supervanish.spectate")){
+                $name = $sender->getName();
                 if (!in_array($name, $this->vanish)) {
                     $this->vanish[] = $name;
                     $sender->setDataFlag(Entity::DATA_FLAGS, Entity::DATA_FLAG_INVISIBLE, true);
