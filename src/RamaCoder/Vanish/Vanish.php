@@ -59,7 +59,7 @@ class Vanish extends PluginBase implements Listener {
     public $vanish = array();
 
     public function onEnable(){
-        $this->getLogger()->info($this->prefix . C::GREEN . "Plugin Actived. Plugin By RamaCrasher");
+        $this->getLogger()->info($this->prefix . C::GREEN . "Plugin Actived. Plugin By RamaCoder");
         $this->saveResource("config.yml");
         @mkdir($this->getDataFolder());
         $this->config = new Config($this->getDataFolder()."config.yml", Config::YAML, [
