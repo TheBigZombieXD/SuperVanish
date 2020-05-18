@@ -79,7 +79,8 @@ class Vanish extends PluginBase implements Listener {
      */
     
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool {
-        switch($command->getName() == "vanish") {
+        switch($command->getName()) {
+            case "vanish":
             if(!$sender instanceof Player) {
 				$sender->sendMessage($this->prefix . "§r§cThis game only usage in-game!");
 				return true;
@@ -108,6 +109,8 @@ class Vanish extends PluginBase implements Listener {
                     return true;
                 }
             }
+            break;
         }
+     return true;
     }
 }
