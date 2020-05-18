@@ -1,5 +1,5 @@
 name: SuperVanish
-main: RamaCrasher\Vanish\Vanish
+main: RamaCoder\Vanish\Vanish
 version: 1.0
 author: RamaCoder
 api: 3.0.0 ALPHA10
